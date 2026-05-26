@@ -7,4 +7,3 @@ dist/
 *.rlib
 *.rmeta
 *.d
-Cargo.lock
