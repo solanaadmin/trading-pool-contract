@@ -1,4 +1,5 @@
 use anchor_lang::prelude::*;
+use solana_security_txt::security_txt;
 
 pub mod errors;
 pub mod instructions;
@@ -6,12 +7,17 @@ pub mod state;
 
 use instructions::*;
 
-// ── Program ID ─────────────────────────────────────────────────────────────
-//
-// Replace this placeholder after running:
-//   anchor keys list
-// then paste the printed key here and in Anchor.toml [programs.*]
 declare_id!("H59K28q5kyteWfAGqt34pwkduNwntcambE75tXVp3nZF");
+
+security_txt! {
+    name: "SolanaFund Trading Pool",
+    project_url: "https://github.com/solanaadmin/trading-pool-contract",
+    contacts: "email:admin@solanafund.io",
+    policy: "https://github.com/solanaadmin/trading-pool-contract/blob/main/SECURITY.md",
+    source_code: "https://github.com/solanaadmin/trading-pool-contract",
+    preferred_languages: "en",
+    auditors: "OtterSec"
+}
 
 #[program]
 pub mod trading_pool {
